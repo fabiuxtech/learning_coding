@@ -11,5 +11,4 @@ int main() {
     printf("size of long double = %d bytes\n", sizeof(d));
     printf("The Authos is = %c");
     return 0;
-    lol
 }
