@@ -13,13 +13,9 @@ def hexToDec(hexNum):
     power = 0
 # Method 1 
     while i >= 0:
-        if hexNum[i] not in hexNumbers.values():
-            print('\nUna o più cifre non fanno parte del sistema esadecimale (base 16).\n')
-        else:
-            decNum += hexNumbers[hexNum[i]] * (16 ** power)
-            i -= 1
-            power += 1
-    print(f'{decNum:n}')
+        decNum += hexNumbers[hexNum[i]] * (16 ** power)
+        i -= 1
+        power += 1
     return decNum
 
 # Method 2
@@ -30,7 +26,7 @@ def hexToDec(hexNum):
    # return decNum
 
 hexNum = input(f'\nInserisci il numero esadecimale: ')
-hexToDec(hexNum)
+print(f'Il decimale di {hexNum} è: {hexToDec(hexNum):n}')
 
 #Varie Prove
 #print(f'\n{hexNum} in decimale è: {hexToDec(hexNum)}\n')
