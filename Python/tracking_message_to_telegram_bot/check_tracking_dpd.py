@@ -15,7 +15,7 @@ driver_path = '/home/pi/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedr
 service = Service(driver_path)
 driver = webdriver.Chrome(service=service, options=chrome_options)
 #
-url = 'https://tracking.dpd.de/status/en_US/parcel/29130000071255'
+url = 'tracking_website'
 driver.get(url)
 time.sleep(2)
 #script = """
