@@ -22,19 +22,6 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 url = 'https://a1.asendiausa.com/tracking/?trackingnumber=EEUS001512506IT0'
 driver.get(url)
 time.sleep(2)
-#script = """
-#var results = [];
-#
-#// Codice JavaScript utilizzando jQuery
-#$("span.asendia-lead").each(function() {
-#    var spanText = $(this).text().trim();
-#    var divText = $(this).next('.card-body').text().trim();
-#    var combinedText = spanText + ' ' + divText;
-#    results.push(combinedText);
-#});
-#
-#return results;
-#"""
 script = """
 var results = [];
 
@@ -52,7 +39,6 @@ driver.quit()
 n = 17
 filtered_results = results[n:]
 #print(results[n:])
-
 chat_id = '32230559'
 custom_message = '<b>Tracking dal sito Asendia USA:</b>'
 message = custom_message + '\n' + '\n'.join(filtered_results)

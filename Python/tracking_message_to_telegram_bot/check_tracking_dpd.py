@@ -21,7 +21,6 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 url = 'https://tracking.dpd.de/status/en_US/parcel/29130000071255'
 driver.get(url)
 time.sleep(2)
-
 script = """
 var results = [];
 
