@@ -26,7 +26,7 @@ script = """
 var results = [];
 
 //codice JavaScript utilizzando jQuery
-$("span.asendia-lead").each(function() {
+$("span.asendia-lead,div.card-body").each(function() {
     var text = $(this).text().trim();
     results.push(text);
 });
