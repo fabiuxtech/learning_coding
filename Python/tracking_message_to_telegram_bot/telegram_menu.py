@@ -16,8 +16,8 @@ def button(update, context):
 
     if action == 'action1':
         query.edit_message_text(text='Verifico lo stato di Dell XPS')
-
-updater = Updater('2086863893:AAG848UXv38R7N5nym-gUrlE6kPe-ow7hsQ', use_context=True)
+token_bot = '2086863893:AAG848UXv38R7N5nym-gUrlE6kPe-ow7hsQ'
+updater = Updater(token_bot, use_context=True)
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CallbackQueryHandler(button))
 updater.start_polling()
