@@ -11,14 +11,14 @@ def hexToDec(hexNum):
     i = numLenght - 1
     decNum = 0
     power = 0
-# Method 1 
+# Metodo 1 
     while i >= 0:
         decNum += hexNumbers[hexNum[i]] * (16 ** power)
         i -= 1
         power += 1
     return decNum
 
-# Method 2
+# Metodo 2
    # for char in hexNum[::-1]:
    #     single_char = hexNumbers.get(char)
    #     decNum += single_char * (16 ** power) 
