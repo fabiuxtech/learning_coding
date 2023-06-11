@@ -4,19 +4,23 @@
 #print(keyword.kwlist)
 #for k in keyword.kwlist:
 #    print(k,end='\n')
-print('Hi!\nWhat\'s your name?')
-name = input()
-print(f'Nice to meet you {name}')
-while True:
-    print('Are you enjoying the course? (Yes/No)')
-    enj = input()
-    enj = enj.lower()
-    if enj == 'yes':
-        print('Glad to hear that')
-        break
-    elif enj == 'no':
-        print('Sorry to hear that')
-        break
-    else:
-        print(f'Word {enj} not accepted')
-        continue
+#food = input('What\'s your favorite food? ')
+#food = food.lower()
+#if food == 'pizza':
+#    print('Yep! So amazing!')
+#else:
+#    print('Yuck! That\'s not it!')
+#print('Thanks for playing!')
+def favorite_city(name):
+    print('One of my favorite cities is', name)
+
+favorite_city('Roma')
+favorite_city('Roma')
+favorite_city('Roma')
+
+def isEven(num):
+    return num % 2 == 0
+if isEven(3):
+    print('3 is even')
+else: 
+    print('3 is not even')
