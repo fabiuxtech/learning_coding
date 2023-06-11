@@ -11,12 +11,9 @@ while True:
     print('Are you enjoying the course? (Yes/No)')
     enj = input()
     enj = enj.lower()
-    if enj == 'yes':
-        print('Glad to hear that')
-        break
-    elif enj == 'no':
-        print('Sorry to hear that')
-        break
-    else:
+    if (enj != 'yes') and (enj != 'no'):
         print(f'Word {enj} not accepted')
         continue
+    else:
+        print('Thank you for the feedback')
+        break
