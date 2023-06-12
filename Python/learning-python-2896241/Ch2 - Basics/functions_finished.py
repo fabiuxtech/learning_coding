@@ -31,13 +31,13 @@ def multi_add(*args):
     return result
 
 
-func1()
-print(func1())
-print(func1)
-func2(10, 20)
-print(func2(10, 20))
-print(cube(3))
-print(power(2))
-print(power(2, 3))
-print(power(x=3, num=2))
-print(multi_add(4, 5, 10, 4))
+# func1()
+# print(func1())
+# print(func1)
+# func2(10, 20)
+# print(func2(10, 20))
+# print(cube(3))
+# print(power(2))
+# print(power(2, 3))
+# print(power(x=3, num=2))
+# print(multi_add(4, 5, 10, 4))
