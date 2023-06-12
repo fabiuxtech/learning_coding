@@ -11,14 +11,34 @@ def encodeString(stringVal):
     for char in stringVal:
         if char != prevChar:
             count_char = 1
-            print(f'New character is {char}')
             newChar = (char, count_char)
             encoding.append(newChar)
+        else:
+            count_char += 1
+            encoding.pop()
+            sameChar = (char, count_char)
+            encoding.append(sameChar)
         prevChar = char
     return encoding
 
 def decodeString(encodeList):
-    pass
+    decodeStr = ''
+    for char, numbers in encodeList:
+        decodeStr += char * numbers
+    return decodeStr
+
+# def ryanEncodeString(stringVal):
+#     encodedList = []
+#     prevChar = stringVal[0]
+#     count = 0
+#     for char in stringVal:
+#         if prevChar != char:
+#             encodedList.append((prevChar, count))
+#             count = 0
+#         prevChar = char
+#         count = count + 1
+#     encodedList.append((prevChar, count))
+#     return encodedList
 
 art = '''
 
@@ -58,6 +78,10 @@ art = '''
                                                                                  
 
 '''
-#encodeString = encodeString(art)
 stringVal = 'AAAAABBBBAAA'
-print(encodeString(stringVal))
+encodeString = encodeString(art)
+# encodeString = ryanEncodeString(art)
+print(encodeString)
+# listVal = [('A',5), ('B',4), ('A',3)]
+decodeString = decodeString(encodeString)
+print(decodeString)
