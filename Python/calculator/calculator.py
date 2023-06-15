@@ -38,16 +38,6 @@ def stringToNumber(x,y='1'):
     x = int(x)
     y = int(y)
     return x,y
-
-def pause():
-    x = input('Vuoi continuare? (S/N)')
-    x = x.lower
-    if x == 's':
-        return x
-    elif x == 'n':
-        return x
-    else:
-        return x
     
 operations = '''
     Scegli l'operazione:
