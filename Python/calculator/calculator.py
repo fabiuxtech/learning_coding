@@ -1,5 +1,7 @@
 from math import sqrt
 
+sw = 'Calculator 1.0'
+
 def sum(x,y):
     tot = x + y
     return tot
@@ -29,34 +31,39 @@ def square(x):
 def pause():
     x = input('Vuoi continuare? (S/N)')
     x = x.lower
-    
     if x == 's':
-        return 'continue'
+        return x
     elif x == 'n':
-        return 'break'
+        return x
     else:
-        print('Scelta non corretta')
+        return x
     
-    
-
 operations = '''
-Scegli l'operazione:
-1) Somma
-2) Sottrazione
-3) Moltiplicazione
-4) Divisione
-5) Elevamento a potenza
-6) Radice quadrata
-'''
+    Scegli l'operazione:
+    1) Somma
+    2) Sottrazione
+    3) Moltiplicazione
+    4) Divisione
+    5) Elevamento a potenza
+    6) Radice quadrata
+    7) Esci dal programma
+    '''
+
+print(sw)
+print(operations)
 
 while True:
-    print(operations)
-    choice = input('--> ')
-    # choice = int(choice)
+    choice = input('\nScegli l\'operazione --> ')
     match choice:
         case '1':
-            print('-- Hai scelto somma --')
-            x = int(input('Inserisci primo numero: '))
-            y = int(input('Inserisci secondo numero: '))
-            print(f'La somma è: {sum(x,y)}')
-            pause()
+            print('Hai scelto somma:')
+            x = int(input('Inserisci primo numero? '))
+            y = int(input('Inserisci il secondo numero '))
+            print(f'La somma di {x} + {y} è {sum(x,y)}')
+        case '7':
+            print(f'Grazie per aver usato {sw}, a presto!\n')
+            break
+        case _:
+            print('Scelta non corretta')
+            print(operations)
+            continue
