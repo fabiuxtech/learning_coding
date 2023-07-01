@@ -15,8 +15,8 @@ def favorite_city(name):
     print('One of my favorite cities is', name)
 
 favorite_city('Roma')
-favorite_city('Roma')
-favorite_city('Roma')
+favorite_city('Tokyo')
+favorite_city('New York')
 
 def isEven(num):
     return num % 2 == 0
