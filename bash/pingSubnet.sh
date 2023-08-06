@@ -20,7 +20,7 @@ for element in $(cat $file); do
             echo "L'ip $subnet.$i è raggiungibile"
         else
             echo -n "L'ip $subnet.$i non è raggiungibile: "
-            echo "$(ping -c 2 -w 2 $subnet.$i |grep "icmp_seq=1" |cut -d ' ' -f4-6)"
+            echo "$(ping -c 2 -w 2 $subnet.$i | grep "icmp_seq=1" | cut -d ' ' -f4-6)"
         fi
     done
 done
