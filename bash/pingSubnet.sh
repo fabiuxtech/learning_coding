@@ -12,6 +12,8 @@ for element in $(cat $file); do
     elif test "$mask" = "25"; then
         export hosts=$(seq 1 127)
         echo "Inizio a pingare 127 indirizzi"
+    elif test "$mask" = "26"; then
+        export hosts=$(seq 1 63)
     else
         echo "Subnet Mask $mask non riconosciuta"
     fi
