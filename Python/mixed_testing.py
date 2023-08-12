@@ -26,12 +26,9 @@
 #     print('3 is not even')
     
 # Test potenze alla 0
-from math import sqrt
-a = 3
-b = 3
-c = a**b
-if (a or b) == 0:
-    print("operazione non definita")
+a = "Python"
+b = "YtHo"
+if str.lower(b) in str.lower(a):
+    print(f"Yes {b} is in {a}")
 else:
-    print(c)
-sqrt
+    print(f"No, {b} is not in {a}")
