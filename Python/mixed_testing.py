@@ -1,15 +1,30 @@
-my_list = [9.81, "pasta", 13, 65, 3.14]
-new_list = ["asd", "ciccia", "pizza", my_list]
+my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
+match = "r"
+counter = 0
+for char in my_string:
+    if match == char:
+        counter += 1
+print(f"Ho trovato {counter} caratteri '{match}' in 'my_string' ")    
+
+# to_do = ["portare il cane a passeggio", "finire di studiare", "fare la spesa"]
+# # print(f"\n".join(to_do))
+# # for el in to_do:
+# #     print(el)
+# print(len(to_do))
+
+# my_list = [9.81, "pasta", 13, 65, 3.14]
+# new_list = ["asd", "ciccia", "pizza", my_list]
 # print(new_list)
 # print(new_list[3][-1]) # doppio indice per accedere indice di una lista dentro un'altra lista
-primi = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-match = 23
-print(f"Elenco numeri primi\n")
-for el in primi:
-    if el == match:
-        print(f"Num: {el} corrisponde al match --> {match}")
-    else:
-        print(f"Num: {el}")
+
+# primi = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+# match = 23
+# print(f"Elenco numeri primi\n")
+# for el in primi:
+#     if el == match:
+#         print(f"Num: {el} corrisponde al match --> {match}")
+#     else:
+#         print(f"Num: {el}")
 
 #!/usr/bin/python
 # This is a Test file for learning purpose
