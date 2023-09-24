@@ -1,10 +1,22 @@
-my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
-match = "r"
-counter = 0
-for char in my_string:
-    if match == char:
-        counter += 1
-print(f"Ho trovato {counter} caratteri '{match}' in 'my_string' ")    
+def leftPad(stringa,lunghezza,carattere=1):
+    stringa = str(stringa)
+    i = -1
+    if carattere is not None and carattere != 0:
+        carattere = " "
+        lunghezza = lunghezza - len(stringa)
+        while i < lunghezza:
+            i += 1
+            stringa = carattere + stringa
+    return stringa
+print(leftPad("Ciao",5))
+
+# my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
+# match = "r"
+# counter = 0
+# for char in my_string:
+#     if match == char:
+#         counter += 1
+# print(f"Ho trovato {counter} caratteri '{match}' in 'my_string' ")    
 
 # to_do = ["portare il cane a passeggio", "finire di studiare", "fare la spesa"]
 # # print(f"\n".join(to_do))
