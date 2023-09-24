@@ -65,7 +65,7 @@ while True:
         if keepGoing == 's':
             print(operations)
         elif keepGoing == 'n':
-            print(f'\n{byeM}')
+            print(f'\n{byeM}\n')
             break
         else:
             print(f'\nRisposta non corretta.')
