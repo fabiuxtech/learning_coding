@@ -1,3 +1,16 @@
+my_list = [9.81, "pasta", 13, 65, 3.14]
+new_list = ["asd", "ciccia", "pizza", my_list]
+# print(new_list)
+# print(new_list[3][-1]) # doppio indice per accedere indice di una lista dentro un'altra lista
+primi = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+match = 23
+print(f"Elenco numeri primi\n")
+for el in primi:
+    if el == match:
+        print(f"Num: {el} corrisponde al match --> {match}")
+    else:
+        print(f"Num: {el}")
+
 #!/usr/bin/python
 # This is a Test file for learning purpose
 #import keyword
@@ -25,10 +38,9 @@
 # else: 
 #     print('3 is not even')
     
-# Test potenze alla 0
-a = "Python"
-b = "YtHo"
-if str.lower(b) in str.lower(a):
-    print(f"Yes {b} is in {a}")
-else:
-    print(f"No, {b} is not in {a}")
+# a = "Python"
+# b = "YtHo"
+# if str.lower(b) in str.lower(a):
+#     print(f"Yes {b} is in {a}")
+# else:
+#     print(f"No, {b} is not in {a}")
