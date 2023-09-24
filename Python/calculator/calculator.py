@@ -1,6 +1,6 @@
 from math import sqrt
 
-sw = "Calculator 1.0"
+sw = "Calculator 1.2"
 helloM = "Benvenuto su {}".format(sw)
 byeM = "Grazie per aver usato {}, a presto!".format(sw)
 firstStart = 0
