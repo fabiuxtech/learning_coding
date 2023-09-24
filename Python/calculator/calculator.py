@@ -1,6 +1,8 @@
 from math import sqrt
 
-sw = 'Benvenuto su Calculator 1.0'
+sw = "Calculator 1.0"
+helloM = "Benvenuto su {}".format(sw)
+byeM = "Grazie per aver usato {}, a presto!".format(sw)
 firstStart = 0
 
 def sum(x,y):
@@ -51,7 +53,7 @@ operations = '''
     7) Esci dal programma
     '''
 
-print('\n',sw)
+print(f"\n", helloM)
 
 while True:
     if firstStart == 0:
@@ -62,7 +64,7 @@ while True:
         keepGoing = keepGoing.lower()
         if keepGoing == 's':
             print(operations)
-        if keepGoing == 'n':
+        elif keepGoing == 'n':
             break
         else:
             print(f'\nRisposta non corretta.')
@@ -124,7 +126,7 @@ while True:
                 sTn = stringToNumber(x)
                 print(f'\nLa radice quadrata di {sTn[0]} è {sqrt(sTn[0])}')
         case '7':
-            print(f'\nGrazie per aver usato {sw}, a presto!\n')
+            print(f'\n{byeM}\n')
             break
         case _:
             print('Scelta non corretta')
