@@ -1,10 +1,11 @@
-my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
-match = "r"
-counter = 0
-for char in my_string:
-    if match == char:
-        counter += 1
-print(f"Ho trovato {counter} caratteri '{match}' in 'my_string' ")    
+#
+# my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
+# match = "r"
+# counter = 0
+# for char in my_string:
+#     if match == char:
+#         counter += 1
+# print(f"Ho trovato {counter} caratteri '{match}' in 'my_string' ")    
 
 # to_do = ["portare il cane a passeggio", "finire di studiare", "fare la spesa"]
 # # print(f"\n".join(to_do))
