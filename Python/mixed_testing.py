@@ -1,4 +1,15 @@
-#
+def leftPad(stringa,lunghezza,carattere=1):
+    stringa = str(stringa)
+    i = -1
+    if carattere is not None and carattere != 0:
+        carattere = " "
+        lunghezza = lunghezza - len(stringa)
+        while i < lunghezza:
+            i += 1
+            stringa = carattere + stringa
+    return stringa
+print(leftPad("Ciao",5))
+
 # my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
 # match = "r"
 # counter = 0
