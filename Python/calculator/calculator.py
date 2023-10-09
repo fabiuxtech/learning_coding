@@ -9,6 +9,21 @@ def sum(x,y):
     tot = x + y
     return tot
 
+# # TEST somma di N argomenti
+# def bigSum(a):
+#     operators = ["+"]
+#     tot = 0
+#     for i in a:
+#         print(i,end=" ")
+#         if i != operators:
+#             if i.isdigit():
+#                 tot += int(i)
+#     print("=",end=" ")
+#     return tot
+# a="3+1+2+3"
+# print(bigSum(f"\n{a}"))
+# # FINE TEST
+
 def sub(x,y):
     tot = x - y
     return tot
