@@ -36,10 +36,18 @@ def div(x,y):
     tot = x / y
     return tot
 
+# def power(num,x=1):
+#     tot = 1
+#     for n in range(x):
+#         tot *= num
+#     return tot
+
 def power(num,x=1):
     tot = 1
-    for n in range(x):
+    i = x
+    while i >= 1:
         tot *= num
+        i -= 1
     return tot
 
 def square(x):
