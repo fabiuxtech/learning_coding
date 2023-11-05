@@ -54,7 +54,7 @@ def square(x):
     tot = sqrt(x)
     return tot
 
-def isNumber(x,y='1'):
+def isNumber(x,y):
     if x.isdigit() and y.isdigit():
         return 0
     else:
