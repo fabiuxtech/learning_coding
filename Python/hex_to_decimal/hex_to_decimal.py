@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import locale
 locale.setlocale(locale.LC_ALL, 'it_IT.UTF-8')
 hexNumbers = {
