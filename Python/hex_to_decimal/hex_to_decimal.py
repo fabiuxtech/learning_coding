@@ -15,17 +15,20 @@ def hexToDec(hexNum):
     power = 0
 # Metodo 1 
     while i >= 0:
+        #print(hexNumbers[hexNum[i]])
+        print(power)
         decNum += hexNumbers[hexNum[i]] * (16 ** power)
+        #print(decNum)
         i -= 1
         power += 1
     return decNum
 
 # Metodo 2
-   # for char in hexNum[::-1]:
-   #     single_char = hexNumbers.get(char)
-   #     decNum += single_char * (16 ** power) 
-   #     power += 1
-   # return decNum
+    # for char in hexNum[::-1]:
+    #    single_char = hexNumbers.get(char)
+    #    decNum += single_char * (16 ** power) 
+    #    power += 1
+    # return decNum
 
 hexNum = input(f'\nInserisci il numero esadecimale: ')
 print(f'Il decimale di {hexNum} è: {hexToDec(hexNum):n}')
