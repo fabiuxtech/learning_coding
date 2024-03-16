@@ -15,10 +15,7 @@ def hexToDec(hexNum):
     power = 0
 # Metodo 1 
     while i >= 0:
-        #print(hexNumbers[hexNum[i]])
-        print(power)
         decNum += hexNumbers[hexNum[i]] * (16 ** power)
-        #print(decNum)
         i -= 1
         power += 1
     return decNum
