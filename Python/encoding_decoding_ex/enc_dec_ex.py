@@ -78,7 +78,7 @@ art = '''
                                                                                  
 
 '''
-stringVal = 'AAAAABBBBAAA'
+#stringVal = 'AAAAABBBBAAA'
 encodeString = encodeString(art)
 # encodeString = ryanEncodeString(art)
 print(encodeString)
