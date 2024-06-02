@@ -2,7 +2,11 @@
 # adv-project v0.1
 # author: Fabio Carrassi
 land = "project-land"
+<<<<<<< HEAD
 invent = []
+=======
+invent = {"cookies"}
+>>>>>>> 359dbcfc0f7b432086a3b2d6ea11ff1902b8a7b5
 where = ""
 s = "sud"
 n = "nord"
@@ -22,6 +26,7 @@ class iNventory:
         print(f"Inventory is Full")
     def listing():
         print(f"Those are your items:")
+<<<<<<< HEAD
     #to complete
     def relitem(item):
         print(f"Want to trash {item}? y/n ")
@@ -35,6 +40,9 @@ class iNventory:
             return choice
     def takeitem(item):
         pass
+=======
+        print(invent)
+>>>>>>> 359dbcfc0f7b432086a3b2d6ea11ff1902b8a7b5
 def inventory():
     if invent == {}:
         print(f"Your inventory is: empty")
@@ -44,7 +52,7 @@ def backtoprompt():
     print(f"What's your next move?")
     choices(input(f"=> "))
 def choices(where):
-    wami = "lost"
+    wami = "no-where"
     where = str.lower(where)
     match where:
         case "h":
@@ -79,5 +87,7 @@ def choices(where):
             backtoprompt()
         case "exit":
             exit
+        case _:
+            backtoprompt()
 print(f"Welcome to {land}\nType 'h' for {h}")
 backtoprompt()
