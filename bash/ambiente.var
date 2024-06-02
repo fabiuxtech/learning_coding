@@ -1,0 +1,5 @@
+plan=p-w4-col-vdc1-nc-os-FullMon-1300
+clientgroup=w4-col-vdc1-nc-clients
+proxy1=proxy1.local
+proxy2=proxy2.local
+cshost=cshost.local
