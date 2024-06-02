@@ -1,3 +1,4 @@
+#!/bin/python3
 from math import sqrt
 
 sw = "Calculator 1.2"

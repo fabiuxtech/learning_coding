@@ -2,7 +2,7 @@
 # adv-project v0.1
 # author: Fabio Carrassi
 land = "project-land"
-invent = {}
+invent = []
 where = ""
 s = "sud"
 n = "nord"
@@ -22,6 +22,19 @@ class iNventory:
         print(f"Inventory is Full")
     def listing():
         print(f"Those are your items:")
+    #to complete
+    def relitem(item):
+        print(f"Want to trash {item}? y/n ")
+        choice = input(f"=> ")
+        choice == lower(choice)
+        if choice == "y":
+            invent.remove(item)
+            return choice
+        else:
+            print(f"No item released")
+            return choice
+    def takeitem(item):
+        pass
 def inventory():
     if invent == {}:
         print(f"Your inventory is: empty")
@@ -48,7 +61,7 @@ def choices(where):
                   """)
             choices(input(f"=> "))
         case "i":
-            if invent == {}:
+            if invent == []:
                 iNventory.empty()
                 backtoprompt()
             elif invent == "Full":
