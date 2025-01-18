@@ -1,7 +1,7 @@
 #!/bin/python3
 from math import sqrt
 
-sw = "Calculator 1.2"
+sw = "Calculator 1.3"
 helloM = "Benvenuto su {}".format(sw)
 byeM = "Grazie per aver usato {}, a presto!".format(sw)
 firstStart = 0
@@ -145,10 +145,11 @@ while True:
         case '6':
             print('Hai scelto Radice Quadrata:')
             x = input('Inserisci il numero sul quale calcolare la radice quadrata: ')
-            if isNumber(x) == 1:
+            y = "1"
+            if isNumber(x,y) == 1:
                 print(f'\nDevi inserire solo numeri\nHai inserito {x} e {y}')
             else:
-                sTn = stringToNumber(x)
+                sTn = stringToNumber(x,y)
                 print(f'\nLa radice quadrata di {sTn[0]} è {sqrt(sTn[0])}')
         case '7':
             print(f'\n{byeM}\n')
