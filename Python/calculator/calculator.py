@@ -34,8 +34,11 @@ def mult(x,y):
     return tot
 
 def div(x,y):
-    tot = x / y
-    return tot
+    if y == 0:
+        return "Non si può dividere per zero"
+    else:
+        tot = x / y
+        return tot
 
 # def power(num,x=1):
 #     tot = 1
