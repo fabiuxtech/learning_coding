@@ -74,6 +74,7 @@ def doNickMean(x):
         mean += len(user["Nickname"])
     mean = mean / len(x)
     return mean
+
 try:
     try:
         usersNumber = int(input("\nInsert the number of users you want to register: "))
