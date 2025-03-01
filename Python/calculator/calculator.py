@@ -139,7 +139,7 @@ while True:
         case '5':
             print('Hai scelto Elevamento a Potenza:')
             x = input('Inserisci il numero da elevare: ')
-            y = input('Inserisci l\'esponenente: ')
+            y = input('Inserisci l\'esponente: ')
             if isNumber(x,y) == 1:
                 print(f'\nDevi inserire solo numeri\nHai inserito {x} e {y}')
             else:
