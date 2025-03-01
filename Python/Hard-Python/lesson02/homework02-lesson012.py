@@ -28,7 +28,7 @@ def reports():
     print(f" Max Age: {doMax(usersList)}")
     print(f" Mean Age: {doAgeMean(usersList)}")
     print(f"\nNickname Stats:")
-    print(f" Mean Nickname Length: {doNickMean(usersList)}")
+    print(f" Mean Nickname Length: {doNickMean(usersList):.2f}")
     pass
 
 def calcMales(x):
