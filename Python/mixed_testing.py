@@ -1,14 +1,30 @@
-def leftPad(stringa,lunghezza,carattere=1):
-    stringa = str(stringa)
-    i = -1
-    if carattere is not None and carattere != 0:
-        carattere = " "
-        lunghezza = lunghezza - len(stringa)
-        while i < lunghezza:
-            i += 1
-            stringa = carattere + stringa
-    return stringa
-print(leftPad("Ciao",5))
+word="Ramarro"
+letter=("r", "R")
+i=0
+total=0
+while i < len(word):
+    for char in word:
+        if char in letter:
+            total+=1
+        i+=1
+    print(total)
+
+# my_list = [{}]
+# my_list.append({"Name": "Fabio", "Age": 30, "Gender": "M"})
+# print(my_list)
+# print(type(my_list))
+
+# def leftPad(stringa,lunghezza,carattere=1):
+#     stringa = str(stringa)
+#     i = -1
+#     if carattere is not None and carattere != 0:
+#         carattere = " "
+#         lunghezza = lunghezza - len(stringa)
+#         while i < lunghezza:
+#             i += 1
+#             stringa = carattere + stringa
+#     return stringa
+# print(leftPad("Ciao",5))
 
 # my_string = "asdsdsndmsfdjfjdiorfemfdjkrdfmmnvmcvbniqopewrrituwencasnmdbnsmaaa"
 # match = "r"
