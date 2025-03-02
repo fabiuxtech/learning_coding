@@ -15,8 +15,13 @@ def myUsers():
     for user in usersList:
         print(f"User Info:")
         for key,value in user.items():
-            print(f" {key}: {value}")
+            if key == "Games":
+                joinG=''.join(value)
+                print(f" {key}: {joinG.title()}")
+            else:
+                print(f" {key}: {value}")
         print("\n")
+
         
 def reports():
     print(f"Now printing Reports\n")
@@ -26,9 +31,9 @@ def reports():
     print(f"\nAge Stats:")
     print(f" Min Age: {doMin(usersList)}")
     print(f" Max Age: {doMax(usersList)}")
-    print(f" Mean Age: {doAgeMean(usersList)}")
+    print(f" Mean Age: {doMean(usersList,'Age'):.2f}")
     print(f"\nNickname Stats:")
-    print(f" Mean Nickname Length: {doNickMean(usersList):.2f}")
+    print(f" Mean Nickname Length: {doMean(usersList,'Nickname'):.2f}")
     pass
 
 def calcMales(x):
@@ -61,17 +66,13 @@ def doMax(x):
             max = user["Age"]
     return max
 
-def doAgeMean(x):
+def doMean(x,y):
     mean = 0
     for user in x:
-         mean += (user["Age"])
-    mean = mean / len(x)
-    return mean
-
-def doNickMean(x):
-    mean = 0
-    for user in x:
-        mean += len(user["Nickname"])
+         if y == "Age":
+            mean += user[y]
+         elif y == "Nickname":
+            mean += len(user[y])
     mean = mean / len(x)
     return mean
 
@@ -84,9 +85,18 @@ try:
             breakpoint = False
             print(f"\nInsert User {i} details ")
             try:
+                nickname=input("\n Insert your nickname: ")
+                for user in usersList:
+                    if nickname in user["Nickname"]:
+                        breakpoint = True
+                        print("\n Nickname already in use") 
+                        break
+                if breakpoint:
+                    continue
+                print(f" Nickname is: {nickname}")
                 age=int(input("\n Insert your age: "))
                 if age < 18:
-                    print("\n You are not allowed to enter the Casino\n")
+                    print(f"\n You're {age} so you are not allowed to enter the Casino\n")
                     continue
                 elif age not in range(18, 101):
                     print(f"\n {age} is an invalid age\n")
@@ -95,21 +105,13 @@ try:
             except ValueError:
                 print(f"\n Invalid age\n")
                 continue
-            nickname=input("\n Insert your nickname: ")
-            for user in usersList:
-                if nickname in user["Nickname"]:
-                    breakpoint = True
-                    print("\n Nickname already in use") 
-                    break
-            if breakpoint:
-                continue
-            print(f" Nickname is: {nickname}")
             gender=input("\n Insert your gender (M/F): ").capitalize()
             if gender not in genderList:
                 print("\n Invalid gender")
                 continue
             print(f" Gender is: {gender}")
-            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender})
+            games=input("\n Insert the games you want to play separated by comma: ")
+            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender, "Games": games.split(",")})
             
             if i == usersNumber:
                 print(f"{lines}\n")
@@ -120,9 +122,9 @@ try:
                 if usersNumber > 1:
                     reports()
             else:
-                print(f"\nUser {i} added!\n\nGo with the next one...\n")
+                print(f"\nUser n.{i} added!\n\nGo with the next one...\n")
                 print(f"{lines}\n")
             i += 1
 except KeyboardInterrupt:
     print(f"\n\nProgram interrupted, you pressed CTRL+C\n")
-    exit()
+    exit(1)
