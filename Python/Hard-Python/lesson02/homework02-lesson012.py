@@ -95,16 +95,19 @@ try:
                 print(f"\n Invalid age\n")
                 continue
             nickname=input("\n Insert your nickname: ")
-            if nickname in usersList:
-                print("\n Nickname already in use")  
-                continue
-            print(f" Nickname is: {nickname}")
+            for user in usersList:
+                if nickname in user["Nickname"]:
+                    print("\n Nickname already in use")  
+                    break
+                else:
+                    print(f" Nickname is: {nickname}")
             gender=input("\n Insert your gender (M/F): ").capitalize()
             if gender not in genderList:
                 print("\n Invalid gender")
                 continue
             print(f" Gender is: {gender}")
             usersList.append({"Nickname": nickname, "Age": age, "Gender": gender})
+            
             if i == usersNumber:
                 print(f"{lines}\n")
                 print(f"Printing all users...which are {len(usersList)}\n")
@@ -118,5 +121,5 @@ try:
                 print(f"{lines}\n")
             i += 1
 except KeyboardInterrupt:
-    print(f"\n\nYou pressed CTRL+C\n")
+    print(f"\n\nProgram interrupted, you pressed CTRL+C\n")
     exit()
