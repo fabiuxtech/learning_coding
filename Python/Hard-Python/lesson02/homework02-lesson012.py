@@ -81,6 +81,7 @@ try:
     except ValueError:
         print(f"\n Invalid number\n")
     while i <= usersNumber:
+            breakpoint = False
             print(f"\nInsert User {i} details ")
             try:
                 age=int(input("\n Insert your age: "))
@@ -97,10 +98,12 @@ try:
             nickname=input("\n Insert your nickname: ")
             for user in usersList:
                 if nickname in user["Nickname"]:
-                    print("\n Nickname already in use")  
+                    breakpoint = True
+                    print("\n Nickname already in use") 
                     break
-                else:
-                    print(f" Nickname is: {nickname}")
+            if breakpoint:
+                continue
+            print(f" Nickname is: {nickname}")
             gender=input("\n Insert your gender (M/F): ").capitalize()
             if gender not in genderList:
                 print("\n Invalid gender")
