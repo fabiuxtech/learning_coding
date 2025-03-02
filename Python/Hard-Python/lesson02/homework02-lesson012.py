@@ -22,7 +22,6 @@ def myUsers():
                 print(f" {key}: {value}")
         print("\n")
 
-        
 def reports():
     print(f"Now printing Reports\n")
     print(f"Users Stats:")
