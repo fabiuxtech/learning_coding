@@ -1,13 +1,16 @@
-word="Ramarro"
-letter=("r", "R")
-i=0
-total=0
-while i < len(word):
-    for char in word:
-        if char in letter:
-            total+=1
-        i+=1
-    print(total)
+games="1, 2, 3, 4"
+print(games.split(","))
+
+# word="Ramarro"
+# letter=("r", "R")
+# i=0
+# total=0
+# while i < len(word):
+#     for char in word:
+#         if char in letter:
+#             total+=1
+#         i+=1
+#     print(total)
 
 # my_list = [{}]
 # my_list.append({"Name": "Fabio", "Age": 30, "Gender": "M"})
