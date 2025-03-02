@@ -16,7 +16,7 @@ def myUsers():
         print(f"User Info:")
         for key,value in user.items():
             if key == "Games":
-                joinG=''.join(value)
+                joinG=','.join(value)
                 print(f" {key}: {joinG.title()}")
             else:
                 print(f" {key}: {value}")
@@ -111,12 +111,13 @@ try:
                 continue
             print(f" Gender is: {gender}")
             games=input("\n Insert the games you want to play separated by comma: ")
-            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender, "Games": games.split(",")})
+            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender, "Games": games.split(", ")})
             
             if i == usersNumber:
                 print(f"{lines}\n")
                 print(f"Printing all users...which are {len(usersList)}\n")
                 myUsers()
+                print(usersList[0]["Games"])
                 print(f"All users added! Thank you for your time!\n")
                 print(f"{lines}\n")
                 if usersNumber > 1:
