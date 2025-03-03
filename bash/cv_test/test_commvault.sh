@@ -8,16 +8,17 @@ readonly home_path="/home/fabiuxtech"
 readonly os_file="/etc/os-release"
 readonly DEBUG_MODE=false
 clientname=$(hostname -s)
-clienthost=$clientname.bck.telecomitalia.local
+clienthost=$(hostname -f)
 printf "Script d'installazione %s in versione %s" "$bck_sw" "$bck_sw_ver"
 printf "%s" "$clientname"
 printf "%s" "$clienthost"
+trap 'echo "Errore inatteso, uscita con codice di errore: $? in linea $LINENO"' ERR
 # La funzione "compila" recupera le variabili dal file ambiente.var
 # poi sostituisce i placeholder presenti nel file $answer_file con i valori delle variabili 
 # infine posiziona il file $answer_file, modificato, nella cartella Unix
 debugLog() {
     if [[ "$DEBUG_MODE" = true ]]; then
-        printf "%s" "$@"
+        printf "%s" "$@";sleep 1
     fi
 }
 #Funzione "installa" che esegue l'installazione passandogli come file xml $answer_file

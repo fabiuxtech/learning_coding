@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CVInstallManager_ClientSetup Focus="Instance001">
+<CommServeInfo>
+<CommserveHostInfo clientName="@@COMMSERVE@@" hostName="@@COMMSERVE@@"/>
+</CommServeInfo>
+<clientComposition overWriteClientHostName="1">
+<clientInfo>
+<client clientCertificate="" cvdPort="" installDirectory="VAR_FS">
+<clientEntity clientName="VAR_CLIENTNAME" hostName="VAR_CLIENTHOST"/>
+<jobResulsDir path=""/>
+</client>
+<clientProps logFilesLocation="VAR_FS"/>
+<clientGroups clientGroupName="VAR_CLIENTGROUP"/>
+</clientInfo>
+<components>
+<componentInfo ComponentId="1002" ComponentName="File System Core" consumeLicense="1"/>
+<componentInfo ComponentId="1101" ComponentName="File System" consumeLicense="1"/>
+<commonInfo globalFilters="2" useExistingStoragePolicy="">
+<subclientPlanToUse planName="VAR_PLAN"/>
+<storagePolicyToUse storagePolicyId="" storagePolicyName=""/>
+</commonInfo>
+</components>
+<clientRoles bLaptopBackup="0" bNetworkProxy="" customRolesProp=""/>
+</clientComposition>
+<installFlags allowMultipleInstances="0" decoupledInstall="1" enableFileTypePermissions="0" forceIPV4="1" ignoreJobsRunning="0" install32Base="0" launchProcessManager="0" launchRolesManager="0" overrideClientInfo="False" preferredIPFamily="1" restoreOnlyAgents="0" startService="1" stopService="1" unixGroup="VAR_UNIXGROUP" unixGroupAccess="7" unixOtherAccess="5" unixTempDirectory="">
+<firewallInstall certificatePath="" enableFirewallConfig="1" encryptedTunnel="1" firewallConnectionType="2" httpProxyHostName="" httpProxyPortNumber="" portNumber="">
+<proxyInfo hostName="VAR_PROXY1" portNumber="8403" />
+</firewallInstall>
+</installFlags>
+<organizationProperties authCode="VAR_AUTHCODE"/>
+</CVInstallManager_ClientSetup>
