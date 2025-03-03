@@ -1,5 +1,5 @@
 authcode=123456789
-plan=p-w4-col-vdc1-nc-os-FullMon-1300
-proxy1=proxy1.local
-clientgroup=w4-col-vdc1-nc-clients
-cshost=cshost.local
+plan=test-plan
+proxy1=test-proxy
+clientgroup=test-group
+cshost=commserve
