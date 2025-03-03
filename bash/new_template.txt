@@ -1,6 +1,0 @@
-Questo è un esempio di template per testare la sostituzione di place holder
-Il plan è p-w4-col-vdc1-nc-os-FullMon-1300
-Il clientgroup è w4-col-vdc1-nc-clients
-Il proxy1 si chiama proxy1.local
-Il proxy2 si chiama proxy1.local
-Il Commserve è cshost.local
