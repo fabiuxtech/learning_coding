@@ -25,8 +25,8 @@ def myUsers():
 def reports():
     print(f"Now printing Reports\n")
     print(f"Users Stats:")
-    print(f" Male Users: {calcMales(usersList):.2f}%")
-    print(f" Female Users: {calcFemales(usersList):.2f}%")
+    print(f" Male Users: {calcGenders(usersList,"M"):.2f}%")
+    print(f" Female Users: {calcGenders(usersList, "F"):.2f}%")
     print(f"\nAge Stats:")
     print(f" Min Age: {doMin(usersList)}")
     print(f" Max Age: {doMax(usersList)}")
@@ -35,44 +35,40 @@ def reports():
     print(f" Mean Nickname Length: {doMean(usersList,'Nickname'):.2f}")
     pass
 
-def calcMales(x):
-    males = 0
-    for user in x:
-        if user["Gender"] in ("M", "m"):
-            males += 1
-    males = (males / len(x)) * 100
-    return males
+def calcGenders(userList,gender):
+    tot = 0
+    for user in userList:
+        if gender == "M":
+            if user["Gender"] in ("M", "m"):
+                tot += 1
+        elif gender == "F":
+            if user["Gender"] in ("F", "f"):
+                tot +=1
+    tot = (tot / len(userList)) * 100
+    return tot
 
-def calcFemales(x):
-    females = 0
-    for user in x:
-        if user["Gender"] in ("F", "f"):
-            females += 1
-    females = (females / len(x)) * 100
-    return females
-
-def doMin(x):
-    min = x[0]["Age"]
-    for user in x:
+def doMin(userList):
+    min = userList[0]["Age"]
+    for user in userList:
         if user["Age"] < min:
             min = user["Age"]
     return min
 
-def doMax(x):
-    max = x[0]["Age"]
-    for user in x:
+def doMax(userList):
+    max = userList[0]["Age"]
+    for user in userList:
         if user["Age"] > max:
             max = user["Age"]
     return max
 
-def doMean(x,y):
+def doMean(userList,key):
     mean = 0
-    for user in x:
-         if y == "Age":
-            mean += user[y]
-         elif y == "Nickname":
-            mean += len(user[y])
-    mean = mean / len(x)
+    for user in userList:
+         if key == "Age":
+            mean += user[key]
+         elif key == "Nickname":
+            mean += len(user[key])
+    mean = mean / len(userList)
     return mean
 
 try:
