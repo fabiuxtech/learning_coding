@@ -33,7 +33,24 @@ def reports():
     print(f" Mean Age: {doMean(usersList,'Age'):.2f}")
     print(f"\nNickname Stats:")
     print(f" Mean Nickname Length: {doMean(usersList,'Nickname'):.2f}")
-    pass
+    print(f"Favorite Games: {favGame()}")
+    
+def favGame():
+    countGames = {}
+    count = 1
+    prevGame = 0
+    favGame = ""
+    for user in usersList:
+        for game in user["Games"]:
+            if game not in countGames:
+                countGames.update({game: count})
+            else:
+                countGames.update({game: count+1})
+    for key,value in countGames.items():
+        if value > prevGame:
+            favGame = key,value
+        prevGame = value
+    return favGame
 
 def calcGenders(userList,gender):
     tot = 0
@@ -106,13 +123,15 @@ try:
                 continue
             print(f" Gender is: {gender}")
             games=input("\n Insert the games you want to play separated by comma: ")
-            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender, "Games": games.split(", ")})
+            usersList.append({"Nickname": nickname, "Age": age, "Gender": gender, "Games": games.split(",")})
             
             if i == usersNumber:
                 print(f"{lines}\n")
                 print(f"Printing all users...which are {len(usersList)}\n")
                 myUsers()
-                print(usersList[0]["Games"])
+                for user in usersList:
+                    for game in user["Games"]:
+                        print(game)
                 print(f"All users added! Thank you for your time!\n")
                 print(f"{lines}\n")
                 if usersNumber > 1:
