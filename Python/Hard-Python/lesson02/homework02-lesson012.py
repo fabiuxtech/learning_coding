@@ -37,21 +37,24 @@ def reports():
     
 def favGame():
     countGames = {}
+    countFav = {"placeholder": 1}
     count = 1
     prevGame = 0
     favGame = ""
     for user in usersList:
         for game in user["Games"]:
+            print(game,type(game))
             if game not in countGames:
                 countGames.update({game: count})
             else:
                 countGames.update({game: count+1})
     for key,value in countGames.items():
         if value > prevGame:
-            favGame = key,value
+            countFav.popitem()
+            countFav.update({key: value})
+            # favGame = key,str(value)
         prevGame = value
-    return favGame
-
+    return countFav
 def calcGenders(userList,gender):
     tot = 0
     for user in userList:
