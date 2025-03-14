@@ -43,7 +43,6 @@ def favGame():
     favGame = ""
     for user in usersList:
         for game in user["Games"]:
-            print(game,type(game))
             if game not in countGames:
                 countGames.update({game: count})
             else:
