@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import views
+import currentDT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("polls/", include("polls.urls")),
-    path("datetime/", views.currentDT, name="current-date-time"),
+    path("datetime/", currentDT.DT, name="current-date-time"),
 ]
