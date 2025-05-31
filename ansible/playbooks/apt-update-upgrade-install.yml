@@ -24,7 +24,7 @@
       ansible_become_password: "{{ become_password.user_input }}"
         #register: result
 
-  - name: "{{ 'Installing ' if pkg_status == 'present' }}{{ 'Removing ' if pkg_status == 'absent' }}{{ pkg_name }} package"
+  - name: "{{ 'Installing ' if pkg_status == 'present' else ( 'Removing ' if pkg_status == 'absent' else 'pkg_status wrong status for ' )}}{{ pkg_name }} package"
     ansible.builtin.apt:
       name: "{{ pkg_name }}"
       state: "{{ pkg_status }}" 
