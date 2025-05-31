@@ -1,6 +1,9 @@
 ---
 - name: "Upgrading APT packages to latest version"
   hosts: myself
+  vars:
+    pkg_status: "absent"
+    pkg_name: "openssh-server"
   
   tasks:
   
@@ -19,16 +22,16 @@
     become: true
     vars:
       ansible_become_password: "{{ become_password.user_input }}"
-    register: result
+        #register: result
 
-  - name: "Removing onpenssh-server package"
+  - name: "{{ 'Installing ' if pkg_status == 'present' else 'Removing ' }}{{ pkg_name }} package"
     ansible.builtin.apt:
-      name: "openssh-server"
-      state: absent
+      name: "{{ pkg_name }}"
+      state: "{{ pkg_status }}" 
     become: true
     vars: 
       ansible_becom_password: "{{ become_password.user_input }}"
-    register: result
+        #register: result
 
-  - debug:
-      var: result.stdout
+        #- debug:
+        #var: result.stdout
