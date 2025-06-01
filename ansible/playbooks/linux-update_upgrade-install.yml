@@ -7,34 +7,24 @@
     pkg_name: "insert_pkg_name" # package name to install or remove
     skip_add_or_rm_pkg: true # true if you want to skip installing or removing specific package task / false to run it
     want_to_escalate: true # true if you want to run tasks escalating to root, it will ask password interactively / false to run with no privileges escalation
-  
+
   tasks:
-  
-  - name: "Asking remote become password"
-    pause:
-      prompt: "Password:"
-      echo: false
-    register: become_password
-    when: want_to_escalate
 
   - name: "Searching and installing distribution packages upgrades"
+    become: "{{ want_to_escalate }}"
     ansible.builtin.package:
-      update_cache: yes
-      cache_valid_time: 3600
+      update_cache: true
       name: "*"
       state: latest
-    become: "{{ want_to_escalate }}"
-    vars:
-      ansible_become_password: "{{ (want_to_escalate | bool) | ternary(become_password.user_input, '') }}"	
+      #autoremove: true
+  
     register: result
 
   - name: "{{ 'Installing ' if pkg_status == 'present' else ( 'Removing ' if pkg_status == 'absent' else 'pkg_status wrong status for ' )}}{{ pkg_name }} package"
+    become: "{{ want_to_escalate }}"
     ansible.builtin.package:
       name: "{{ pkg_name }}"
       state: "{{ pkg_status }}" 
-    become: "{{ want_to_escalate }}"
-    vars: 
-      ansible_become_password: "{{ become_password.user_input }}"
     register: result
     when: not skip_add_or_rm_pkg
 
