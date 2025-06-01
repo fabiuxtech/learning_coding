@@ -16,7 +16,7 @@
       update_cache: true
       name: "*"
       state: latest
-      #autoremove: true
+      #autoremove: true # with dnf can't be used with state latest
   
     register: result
 
