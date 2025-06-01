@@ -5,8 +5,8 @@
   vars:
     pkg_status: "absent" # absent to remove a pkg / present to install a pkg
     pkg_name: "insert_pkg_name" # package name to install or remove
-    skip_inst_or_rm: true # true if you want to skip installing or removing specific package task / false to run it
-    want_to_become: true # true if you want to run tasks with become (sudo) it will ask password interactively / false to run without it
+    skip_add_or_rm_pkg: true # true if you want to skip installing or removing specific package task / false to run it
+    want_to_escalate: true # true if you want to run tasks escalating to root, it will ask password interactively / false to run with no privileges escalation
   
   tasks:
   
@@ -22,7 +22,7 @@
       cache_valid_time: 3600
       name: "*"
       state: latest
-    become: "{{ want_to_become }}"
+    become: "{{ want_to_escalate }}"
     vars:
       ansible_become_password: "{{ become_password.user_input }}"
     register: result
@@ -31,11 +31,11 @@
     ansible.builtin.package:
       name: "{{ pkg_name }}"
       state: "{{ pkg_status }}" 
-    become: "{{ want_to_become }}"
+    become: "{{ want_to_escalate }}"
     vars: 
       ansible_become_password: "{{ become_password.user_input }}"
     register: result
-    when: not skip_inst_or_rm
+    when: not skip_add_or_rm_pkg
 
   - debug:
       var: result.stdout
