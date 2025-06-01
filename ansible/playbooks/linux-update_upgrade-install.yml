@@ -15,6 +15,7 @@
       prompt: "Password:"
       echo: false
     register: become_password
+    when: want_to_escalate
 
   - name: "Searching and installing distribution packages upgrades"
     ansible.builtin.package:
@@ -24,7 +25,7 @@
       state: latest
     become: "{{ want_to_escalate }}"
     vars:
-      ansible_become_password: "{{ become_password.user_input }}"
+      ansible_become_password: "{{ (want_to_escalate | bool) | ternary(become_password.user_input, '') }}"	
     register: result
 
   - name: "{{ 'Installing ' if pkg_status == 'present' else ( 'Removing ' if pkg_status == 'absent' else 'pkg_status wrong status for ' )}}{{ pkg_name }} package"
