@@ -6,7 +6,7 @@
     pkg_status: "absent" # absent to remove a pkg / present to install a pkg
     pkg_name: "insert_pkg_name" # package name to install or remove
     skip_add_or_rm_pkg: false # true if you want to skip installing or removing specific package task / false to run it
-    want_to_escalate: true # true if you want to run tasks escalating to root, it will ask password interactively / false to run with no privileges escalation
+    want_to_escalate: true # true if you want to run tasks escalating to root, you need to launch playbook with -K and insert password to escalate or you can manage with ansible vault / false to run with no privileges escalation
 
   tasks:
 
