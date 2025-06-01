@@ -5,7 +5,7 @@
   vars:
     pkg_status: "absent" # absent to remove a pkg / present to install a pkg
     pkg_name: "insert_pkg_name" # package name to install or remove
-    skip_add_or_rm_pkg: true # true if you want to skip installing or removing specific package task / false to run it
+    skip_add_or_rm_pkg: false # true if you want to skip installing or removing specific package task / false to run it
     want_to_escalate: true # true if you want to run tasks escalating to root, it will ask password interactively / false to run with no privileges escalation
 
   tasks:
@@ -18,14 +18,14 @@
         update_cache: true
         name: "*"
         state: latest
-      register: result
+      register: upgrade_result
 
     - name: "Auto-remove unused packages "
       become: "{{ want_to_escalate }}"
       ansible.builtin.package:
         update_cache: true
         autoremove: true
-      register: result
+      register: autoremove_result
       when: ansible_pkg_mgr == "apt" or ansible_pkg_mgr == "dnf"
 
   - name: "{{ 'Installing ' if pkg_status == 'present' else ( 'Removing ' if pkg_status == 'absent' else 'pkg_status wrong status for ' )}}{{ pkg_name }} package"
@@ -33,8 +33,19 @@
     ansible.builtin.package:
       name: "{{ pkg_name }}"
       state: "{{ pkg_status }}" 
-    register: result
+    register: inst_rem_result
     when: not skip_add_or_rm_pkg
 
   - debug:
-      var: result.stdout
+      var: upgrade_result
+    when: upgrade_result.changed is true or upgrade_result.failed is true
+  - debug:
+      var: autoremove_result
+    when: autoremove_result.changed is true or autoremove_result.failed is true
+  - debug:
+      var: inst_rem_result
+    when: >
+      inst_rem_result.changed is true or
+      inst_rem_result.failed is true or 
+      (inst_rem_result.results is defined and
+      'No match' in inst_rem_result.results[0])
