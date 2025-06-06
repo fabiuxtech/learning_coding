@@ -1,6 +1,6 @@
 ---
 - name: "Upgrading distribution packages to latest version and installing or removing specific package"
-  hosts: myself
+  hosts: rpi
   gather_facts: true
   vars:
     pkg_status: "absent" # absent to remove a pkg / present to install a pkg
