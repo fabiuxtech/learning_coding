@@ -1,5 +1,12 @@
-// This code is for an ESP32 project that reads temperature, CO2, and Humidity data from a Sensirion SCD41 sensor and displays it on an SSH1106 OLED screen.
-// It also serves a simple web page to view the data and sends the readings to an InfluxDB instance.
+// Mantainer: Fabio Carrassi
+// Github: https://github.com/fabiuxtech/learning_coding
+// License: This project is licensed under the MIT License.
+
+// This code is for an ESP32 project that reads temperature, CO2, and Humidity data from a Sensirion SCD41 sensor
+// and displays it on an SSH1106 1.3 Inch OLED screen (128x64 pixels).
+// It connects to a Wi-Fi network and serves a simple HTTP web page that displays the readings.
+// Lastly, it sends the data to an InfluxDB instance for storage and analysis.
+
 #include <WiFi.h>
 #include <WebServer.h>
 #include <Wire.h>
