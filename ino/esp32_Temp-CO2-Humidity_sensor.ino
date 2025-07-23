@@ -103,7 +103,7 @@ void sendToInflux(uint16_t co2, float temperature, float humidity) {
     http.begin(influxUrl);
     http.addHeader("Authorization", "Token " + String(influxToken));
     http.addHeader("Content-Type", "text/plain");
-    // InfluxDB Line Protocol)
+    // InfluxDB Line Protocol
     String payload = String(hostname) + " CO2=" + String(co2) + ",temperature=" + String(temperature, 1) + ",humidity=" + String(humidity, 1);
     int httpResponseCode = http.POST(payload);
     if (httpResponseCode > 0) {
