@@ -37,7 +37,7 @@ void PrintUint64(uint64_t& value) {
 // --- Function to manage the root server request (/) ---
 void handleRoot() {
   String html = "<!DOCTYPE html><html><head>";
-  html += "<meta charset='UTF-8'>";  // ⬅️ Questo risolve il problema dei caratteri!
+  html += "<meta charset='UTF-8'>";  //
   html += "<meta http-equiv='refresh' content='5'>";
   html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
   html += "<title>Indoor Measurements</title>";
