@@ -29,11 +29,6 @@ float currentHumidity = 0;
 WebServer server(80); // Inizialize the web server on port 80
 SensirionI2cScd4x scd4x; // Inizialize the SCD41 sensor
 GyverOLED<SSH1106_128x64> oled; // Inizialize the OLED display with SSH1106 driver
-void PrintUint64(uint64_t& value) {
-    Serial.print("0x");
-    Serial.print((uint32_t)(value >> 32), HEX);
-    Serial.print((uint32_t)(value & 0xFFFFFFFF), HEX);
-}
 // --- Function to manage the root server request (/) ---
 void handleRoot() {
   String html = "<!DOCTYPE html><html><head>";
