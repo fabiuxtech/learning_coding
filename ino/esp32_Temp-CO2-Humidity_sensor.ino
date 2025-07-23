@@ -181,7 +181,7 @@ void setup() {
     Serial.print(".");
   }
   Serial.println("\nWiFi Connected!");
-  Serial.print("Indirizzo IP dell'ESP32: ");
+  Serial.print("ESP32 IP Address: ");
   Serial.println(WiFi.localIP()); // Write ESP32 IP address to Serial Monitor
   // --- Web Server initialization ---
   server.on("/", handleRoot);
