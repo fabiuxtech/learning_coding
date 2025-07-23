@@ -198,7 +198,7 @@ void loop() {
   // Check if data is ready
   error = scd4x.getDataReadyStatus(dataReady);
   if (error) {
-    Serial.print("Errore checking SDC41 'dataReady': ");
+    Serial.print("Error checking SDC41 'dataReady': ");
     errorToString(error, errorMessage, 256);
     Serial.println(errorMessage);
   } else if (dataReady) {
